@@ -6,7 +6,7 @@
 <p align="center">
   <a href="#intro"> Introduction </a> •
   <a href="#lib"> Libraries </a> •
-  <a href="#prob"> Problem domain </a> •
+  <a href="#pro"> Problem domain </a> •
   <a href="#cle"> Cleaning the text </a> •
   <a href="#docmatrix"> Document-term matrix </a> •
   <a href="#model"> LDA model </a> 
@@ -41,9 +41,7 @@ This notebook uses the following packages:
 
 In this project I apply LDA to labels on research papers. The dataset is a subset of [this](https://github.com/susanli2016/Machine-Learning-with-Python/blob/master/dataset.csv) data set.
 
-In this projects I will use the `spaCy` library (see this [link](https://github.com/skipgram/modern-nlp-in python/blob/master/executable/Modern_NLP_in_Python.ipynb)). 
-
-`spaCy` is:
+In this projects I will use the `spaCy` library. `spaCy` is:
 
 > An industrial-strength natural language processing (NLP) library for Python. spaCy's goal is to take recent advancements in natural language processing out of research papers and put them in the hands of users to build production software.
 
