@@ -144,3 +144,10 @@ lda = gensim.models.ldamodel.LdaModel.load('model3.gensim')
 lda_display = pyLDAvis.gensim.prepare(lda, corpus, dictionary, sort_topics=False)
 pyLDAvis.display(lda_display)
 ```
+
+
+<br/>
+<p align="center">
+  <img src='https://github.com/marcotav/machine-learning-regression-models/blob/master/retail/images/liquor.jpeg' width="300">
+</p>
+
