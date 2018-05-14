@@ -14,8 +14,10 @@
 
 In this notebook, I will use Python and its libraries for topic modeling. In topic modeling, statistical models are used to identify topics or categories in a document or a set of documents. I will use one specific method called Latent Dirichlet Allocation (LDA) and apply it to labels on research papers.
 
+
+
 <p align="center">
-<img src="https://github.com/marcotav/unsupervised-learning/blob/master/topic-modeling/images/puLDAvis.png width="900"/>  
+<img src="https://github.com/marcotav/unsupervised-learning/blob/master/topic-modeling/images/puLDAvis.png" width="800"/>  
 </p> 
 
 ### clustering-for-customer-segmentation
@@ -24,7 +26,6 @@ In this project I will apply clustering algorithms to the dataset Wholesale Cust
 
 
 <p align="center">
-<img src="https://github.com/marcotav/unsupervised-learning/blob/master/clustering-for-customer-segmentation/images/segmenation.jpg
-" width="150" height="150"/> 
+<img src="https://github.com/marcotav/unsupervised-learning/blob/master/clustering-for-customer-segmentation/images/segmenation.jpg" width="400"/> 
 </p> 
 
