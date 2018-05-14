@@ -26,6 +26,6 @@ In this project I will apply clustering algorithms to the dataset Wholesale Cust
 
 
 <p align="center">
-<img src="https://github.com/marcotav/unsupervised-learning/blob/master/clustering-for-customer-segmentation/images/segmenation.jpg" width="400"/> 
+<img src="https://github.com/marcotav/unsupervised-learning/blob/master/clustering-for-customer-segmentation/images/segmentation.jpg" width="400"/> 
 </p> 
 
