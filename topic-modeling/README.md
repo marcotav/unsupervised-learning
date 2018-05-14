@@ -148,6 +148,6 @@ pyLDAvis.display(lda_display)
 
 <br/>
 <p align="center">
-  <img src='https://github.com/marcotav/machine-learning-regression-models/blob/master/retail/images/liquor.jpeg' width="300">
+  <img src='https://github.com/marcotav/unsupervised-learning/blob/master/topic-modeling/images/puLDAvis.png' width="300">
 </p>
 
