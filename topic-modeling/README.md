@@ -5,16 +5,11 @@
 
 <p align="center">
   <a href="#intro"> Introduction </a> •
-  <a href="#chal"> Challenges and Applications </a> •
-  <a href="#over"> Overview and Data </a> •
-  <a href="#orgdata"> Preprocessing the data </a> •
-  <a href="#Small datasets"> Problems with small datasets </a> •
-  <a href="#bn"> Using bottleneck features of Inception V3 </a> •
-  <a href="#InceptionV3"> Creating and training using the InceptionV3 model </a> •
-  <a href="#trainfully"> Training the fully-connected network</a> •
-  <a href="#plots"> Plotting the accuracy and loss histories </a> •
-  <a href="#Conclusions">Conclusions</a> •
-  <a href="#td">To Dos</a> 
+  <a href="#lib"> Libraries </a> •
+  <a href="#prob"> Problem domain </a> •
+  <a href="#cle"> Cleaning the text </a> •
+  <a href="#docmatrix"> Document-term matrix </a> •
+  <a href="#model"> LDA model </a> 
 </p>
 
 <a id = 'intro'></a>
