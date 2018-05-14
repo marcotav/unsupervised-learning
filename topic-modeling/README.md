@@ -15,8 +15,6 @@
 <a id = 'intro'></a>
 ## Introduction
 
-[[go back to the top]](#Table-of-contents)
-
 In this notebook, I will use Python and its libraries for **topic modeling**. In topic modeling, statistical models are used to identify topics or categories in a document or a set of documents. I will use one specific method called **Latent Dirichlet Allocation (LDA)**. 
 
 The algorithm can be summarized as follows:
