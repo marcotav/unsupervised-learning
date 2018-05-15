@@ -137,8 +137,8 @@ The parameters are:
 
 ```
 import gensim
-ldamodel_3 = gensim.models.ldamodel.LdaModel(corpus, num_topics=3, id2word = dictionary, passes=20)
-for el in ldamodel_3.print_topics(num_topics=3, num_words=3):
+ldamodel = gensim.models.ldamodel.LdaModel(corpus, num_topics=5, id2word = dictionary, passes=20)
+for el in ldamodel.print_topics(num_topics=5, num_words=3):
     print(el,'\n')
 ```
 The output is:
