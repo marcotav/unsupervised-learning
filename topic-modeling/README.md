@@ -10,8 +10,11 @@
   <a href="#cle"> Cleaning the text </a> •
   <a href="#docmatrix"> Document-term matrix </a> •
   <a href="#model"> LDA model </a>  •
+  <a href="#pyLDAvis"> pyLDAvis </a>  •
   <a href="#results"> Results </a> 
 </p>
+
+
 
 <a id = 'intro'></a>
 ## Introduction
@@ -127,7 +130,15 @@ corpus = [dictionary.doc2bow(text) for text in tokens]
 The function `Dictionary( )` traverses `tokens` and assigns an integer id to each on, while collecting word counts. The function `doc2bow` coverts the dictionary into a bag-of-words resulting in a list of vectors, one for each document. In each vector there is a set of tuples. The tuples are of the form (term ID, term frequency).
 
 Examining our corpus:
-
+```
+corpus[0]
+corpus[1]
+```
+gives:
+```
+[(0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1)]
+[(6, 1), (7, 1), (8, 1), (9, 1)]
+```
 
 <a id = 'model'></a>
 ## LDA model
@@ -139,25 +150,36 @@ The parameters are:
 
 ```
 import gensim
-ldamodel = gensim.models.ldamodel.LdaModel(corpus, num_topics=5, id2word = dictionary, passes=20)
-for el in ldamodel.print_topics(num_topics=5, num_words=3):
+ldamodel = gensim.models.ldamodel.LdaModel(corpus, num_topics=10, id2word = dictionary, passes=20)
+for el in ldamodel.print_topics(num_topics=10, num_words=5):
     print(el,'\n')
 ```
 The output is:
 
 ```
-(0, '0.017*"system" + 0.017*"image" + 0.017*"based"') 
+(0, '0.092*"network" + 0.063*"wireless" + 0.030*"sensor" + 0.018*"routing" + 0.018*"mobile"') 
 
-(1, '0.035*"network" + 0.015*"multi" + 0.012*"based"') 
+(1, '0.028*"power" + 0.023*"design" + 0.017*"based" + 0.016*"network" + 0.014*"using"') 
 
-(2, '0.016*"based" + 0.013*"using" + 0.012*"system"') 
+(2, '0.029*"based" + 0.027*"video" + 0.024*"coding" + 0.020*"algorithm" + 0.018*"image"') 
+
+(3, '0.027*"algorithm" + 0.019*"system" + 0.014*"based" + 0.014*"design" + 0.013*"environment"') 
+
+(4, '0.021*"service" + 0.020*"network" + 0.019*"content" + 0.019*"social" + 0.017*"aware"') 
+
+(5, '0.025*"system" + 0.020*"model" + 0.016*"based" + 0.015*"animation" + 0.011*"access"') 
+
+(6, '0.020*"application" + 0.017*"based" + 0.016*"system" + 0.015*"delta" + 0.015*"sigma"') 
+
+(7, '0.025*"using" + 0.020*"search" + 0.017*"structure" + 0.016*"database" + 0.016*"engine"') 
+
+(8, '0.029*"large" + 0.028*"system" + 0.022*"database" + 0.016*"scale" + 0.014*"management"') 
+
+(9, '0.028*"query" + 0.024*"approach" + 0.022*"system" + 0.021*"based" + 0.020*"using"')  
 ```
-<a id = 'results'></a>
-## Results
 
-
-
-
+<a id = 'pyLDAvis'></a>
+## pyLDAvis
 Now I use `pyLDAvis`:
 ```
 import pyLDAvis.gensim
@@ -168,10 +190,13 @@ lda_display = pyLDAvis.gensim.prepare(lda, corpus, dictionary, sort_topics=False
 pyLDAvis.display(lda_display)
 ```
 
-
 <br/>
 <p align="center">
   <img src='https://github.com/marcotav/unsupervised-learning/blob/master/topic-modeling/images/puLDAvis.png' width="900">
 </p>
 
-## Final analysis to be finished
+
+<a id = 'results'></a>
+## Results
+
+Final analysis to be finished.
