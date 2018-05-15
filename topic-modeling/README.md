@@ -192,7 +192,7 @@ pyLDAvis.display(lda_display)
 
 <br/>
 <p align="center">
-  <img src='https://github.com/marcotav/unsupervised-learning/blob/master/topic-modeling/images/puLDAvis.png' width="900">
+  <img src='images/pyLDAvis_new.png' width="900">
 </p>
 
 
