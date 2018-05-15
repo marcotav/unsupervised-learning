@@ -116,13 +116,15 @@ for lst in lemmatized_tokens:
 <a id = 'docmatrix'></a>
 ## Document-term matrix
 
-I will now generate an LDA model and for that, the frequency that each term occurs within each document needs to be understood. A **document-term matrix** is constructed to do that. It contains a corpus of $n$ documents and a vocabulary of $m$ words. Each cell $ij$ counts the frequency of the word $j$ in the document $i$. Converting tokens into dictionary:
+I will now generate an LDA model and for that, the frequency that each term occurs within each document needs to be understood. A **document-term matrix** is constructed to do that. It contains a corpus of n documents and a vocabulary of m words. Each cell ij counts the frequency of the word j in the document i. Converting tokens into a dictionary:
 
 ```
 from gensim import corpora, models
 dictionary = corpora.Dictionary(tokens)
 corpus = [dictionary.doc2bow(text) for text in tokens]
 ```
+The function `Dictionary( )` traverses `tokens` and assigns an integer id to each on, while collecting word counts. The function `doc2bow` coverts the dictionary into a bag-of-words resulting in a list of vectors, one for each document. In each vector there is a set of tuples. 
+
 <a id = 'model'></a>
 ## LDA model
 
