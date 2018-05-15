@@ -9,7 +9,8 @@
   <a href="#pro"> Problem domain </a> •
   <a href="#cle"> Cleaning the text </a> •
   <a href="#docmatrix"> Document-term matrix </a> •
-  <a href="#model"> LDA model </a> 
+  <a href="#model"> LDA model </a>  •
+  <a href="#results"> Results </a> 
 </p>
 
 <a id = 'intro'></a>
@@ -123,10 +124,16 @@ from gensim import corpora, models
 dictionary = corpora.Dictionary(tokens)
 corpus = [dictionary.doc2bow(text) for text in tokens]
 ```
-The function `Dictionary( )` traverses `tokens` and assigns an integer id to each on, while collecting word counts. The function `doc2bow` coverts the dictionary into a bag-of-words resulting in a list of vectors, one for each document. In each vector there is a set of tuples. 
+The function `Dictionary( )` traverses `tokens` and assigns an integer id to each on, while collecting word counts. The function `doc2bow` coverts the dictionary into a bag-of-words resulting in a list of vectors, one for each document. In each vector there is a set of tuples. The tuples are of the form (term ID, term frequency).
+
 
 <a id = 'model'></a>
 ## LDA model
+
+The parameters are:
+- num_topics: how many topics should be generated. 
+- id2word: previous dictionary to map ids to strings.
+- passes: Laps the model will take through the corpus More passes, more accuracy.
 
 ```
 import gensim
@@ -143,6 +150,11 @@ The output is:
 
 (2, '0.016*"based" + 0.013*"using" + 0.012*"system"') 
 ```
+<a id = 'results'></a>
+## Results
+
+
+
 
 Now I use `pyLDAvis`:
 ```
