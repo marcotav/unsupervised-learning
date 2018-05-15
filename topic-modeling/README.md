@@ -19,7 +19,7 @@ In this notebook, I will use Python and its libraries for **topic modeling**, an
 
 Topics are "a repeating pattern of co-occurring terms in a corpus". An example of good topic model would attribute say, "gravity", "Newton" and "electron" to a topic, in this case Physics. 
 
-I will use one specific method called **Latent Dirichlet Allocation (LDA)** which is a matrix factorization technique. 
+I will use one specific method called **Latent Dirichlet Allocation (LDA)** which is a matrix factorization technique. Any corpus can be represented by a matrix of document terms. 
 
 The algorithm can be summarized as follows:
 - First we select - without previous knowledge about what the topics actually are - a fixed number of topics T 
