@@ -15,11 +15,15 @@
 <a id = 'intro'></a>
 ## Introduction
 
-In this notebook, I will use Python and its libraries for **topic modeling**. In topic modeling, statistical models are used to identify topics or categories in a document or a set of documents. I will use one specific method called **Latent Dirichlet Allocation (LDA)**. 
+In this notebook, I will use Python and its libraries for **topic modeling**, an unsupervised approach which can be used to mine unstructured data, fetching the information we need. More concretely, in topic modeling, statistical models are used to identify topics or categories in a document or a set of documents, finding hidden patterns in a *[text corpus](https://en.wikipedia.org/wiki/Text_corpus)* (a text corpus is just "a large and structured set of texts"). It is useful for document clustering, organizing text data and to retrieve information from unstructured text.
+
+Topics are "a repeating pattern of co-occurring terms in a corpus". An example of good topic model would attribute say, "gravity", "Newton" and "electron" to a topic, in this case Physics. 
+
+I will use one specific method called **Latent Dirichlet Allocation (LDA)** which is a matrix factorization technique. 
 
 The algorithm can be summarized as follows:
-- First we select - without previous knowledge regarding what the topics actually are - a fixed number of topics T 
-- We then randomly assign each word to a topic
+- First we select - without previous knowledge about what the topics actually are - a fixed number of topics T 
+- We then randomly assign each word to some topic
 - For each document d, word w and topic t we calculate the probability P(t|w,d) that the word w of document d corresponds to topic t
 - We then reassign each word w to some topic based on  P(t|w,d) and repeat the process until we find the optimal assignment of words to topics
 
