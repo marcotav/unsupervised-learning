@@ -41,6 +41,11 @@ I will apply PCA on a wine dataset.
 ```
 wine_original = pd.read_csv('wines.csv')
 ```
+<br/>
+<p align="center">
+  <img src='images/df_wine.png' width="500">
+</p>
+
 
 Excluding the `red_wine` column
 
@@ -83,7 +88,10 @@ wpcs = wpca.transform(wine_norm)
 wpcs = pd.DataFrame(wpcs, columns=['PC'+str(i) for i in range(1, wpcs.shape[1]+1)])
 wpcs['red_wine'] = wine_original['red_wine']
 ```
-
+<br/>
+<p align="center">
+  <img src='images/df_PC.png' width="500">
+</p>
 
 ### Plotting the variance explained ratio of the PC
 
@@ -95,6 +103,11 @@ ax.set_xlabel('PC')
 ax.set_ylabel('Explained Variance')
 plt.show()
 ```
+<br/>
+<p align="center">
+  <img src='images/expl_var.png' width="500">
+</p>
+
 
 ### Component weights with corresponding variables for the PCs
 
@@ -111,30 +124,19 @@ for i in range(0,4):
 ```
 sns.pairplot(data=wpcs, vars=['PC1','PC2','PC3'], hue='red_wine', size=2)
 ```
+<br/>
+<p align="center">
+  <img src='images/hist_PC.png' width="500">
+</p>
+
+
 
 
 <br/>
 <p align="center">
-  <img src='images/expl_var.png' width="300">
+  <img src='images/corr_pca.png' width="500">
 </p>
 
-<br/>
-<p align="center">
-  <img src='images/hist_PC.png' width="300">
-</p>
 
-<br/>
-<p align="center">
-  <img src='images/corr_pca.png' width="300">
-</p>
 
-<br/>
-<p align="center">
-  <img src='images/df_PC.png' width="300">
-</p>
-
-<br/>
-<p align="center">
-  <img src='images/df_wine.png' width="300">
-</p>
 
