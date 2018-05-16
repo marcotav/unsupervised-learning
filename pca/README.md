@@ -103,14 +103,32 @@ wpcs['red_wine'] = wine_original['red_wine']
 
 ### Plotting the variance explained ratio of the PC
 
+The *explained variance* measures how much information (or variance) can be attributed to each PC. When we reduce the dimensionality, some information, or equivalently, some of the variance is lost. The attribute `explained_variance_ratio_` we find that the first principal component contains 25% of the variance.
 ```
-fig, ax = plt.subplots(figsize=(10,5))
-ax.plot(range(1, wc.shape[1]+1), wpca.explained_variance_ratio_)
-ax.scatter(range(1, wine.shape[1]+1), wpca.explained_variance_ratio_, s=200)
-ax.set_xlabel('PC')
-ax.set_ylabel('Explained Variance')
-plt.show()
+print('Information contained in each PC:')
+PCs = ['PC_{}'.format(i) for i in range(1,1+len(list(wpca.explained_variance_ratio_)))]
+EV = [round(i,2) for i in list(wpca.explained_variance_ratio_)]
+list(zip(PCs,EV))
 ```
+The output is:
+```
+Information contained in each PC:
+[('PC_1', 0.25),
+ ('PC_2', 0.22),
+ ('PC_3', 0.14),
+ ('PC_4', 0.09),
+ ('PC_5', 0.07),
+ ('PC_6', 0.06),
+ ('PC_7', 0.05),
+ ('PC_8', 0.04),
+ ('PC_9', 0.04),
+ ('PC_10', 0.02),
+ ('PC_11', 0.02),
+ ('PC_12', 0.0)]
+
+```
+Plotting this result:
+
 <br/>
 <p align="center">
   <img src='images/expl_var.png' width="500">
