@@ -33,4 +33,108 @@ where i=1,2,3. These principal components are uncorrelated. The new axes of prin
 
 The total variance of your data gets redistributed among the principal components and most variance is captured in the first principal components and the noise is isolated to last principal compoments. Furthermore, there is no covariance between the principal components.
 
+## Goal
+
+I will apply PCA on a wine dataset.
+
+### Importing data
+```
+wine_original = pd.read_csv('wines.csv')
+```
+
+Excluding the `red_wine` column
+
+```
+wine = wine_original.drop('red_wine', axis=1)
+```
+### Correlations
+
+```
+wc = wine.corr()
+```
+
+Since the correlation matrix is symmetric, we can use `np.triu_indices_from` to obtain the indices for the upper-triangle of the matrix only:
+
+```
+upper_triangle = np.zeros_like(wc, dtype=np.bool)
+upper_triangle[np.triu_indices_from(upper_triangle)] = True
+fig, ax = plt.subplots(figsize=(12,4))
+ax = sns.heatmap(wc, mask=upper_triangle)
+ax.set_xticklabels(ax.xaxis.get_ticklabels(), fontsize=10, rotation=90)
+ax.set_yticklabels(ax.yaxis.get_ticklabels(), fontsize=10, rotation=0)
+plt.show()
+```
+
+### Before applying PCA let us normalize the variables
+
+from sklearn.preprocessing import StandardScaler
+ss = StandardScaler()
+wine_norm = ss.fit_transform(wine)
+wine_norm
+
+### Fitting a PCA 
+
+We bulild a `DataFrame` with the PCs adding back `red_wine` column that was dropped.
+
+```
+from sklearn.decomposition import PCA
+wpca = PCA().fit(wine_norm)
+wpcs = wpca.transform(wine_norm)
+wpcs = pd.DataFrame(wpcs, columns=['PC'+str(i) for i in range(1, wpcs.shape[1]+1)])
+wpcs['red_wine'] = wine_original['red_wine']
+```
+
+
+### Plotting the variance explained ratio of the PC
+
+```
+fig, ax = plt.subplots(figsize=(10,5))
+ax.plot(range(1, wc.shape[1]+1), wpca.explained_variance_ratio_)
+ax.scatter(range(1, wine.shape[1]+1), wpca.explained_variance_ratio_, s=200)
+ax.set_xlabel('PC')
+ax.set_ylabel('Explained Variance')
+plt.show()
+```
+
+### Component weights with corresponding variables for the PCs
+
+```
+for i in range(0,4):
+    for col, comp in zip(wc.columns, wpca.components_[i]):
+        print(col,':',round(comp,3))
+    print('')
+```
+
+### Seaborn pairplot of PCs
+
+
+```
+sns.pairplot(data=wpcs, vars=['PC1','PC2','PC3'], hue='red_wine', size=2)
+```
+
+
+<br/>
+<p align="center">
+  <img src='images/expl_var.png' width="300">
+</p>
+
+<br/>
+<p align="center">
+  <img src='images/hist_PC.png' width="300">
+</p>
+
+<br/>
+<p align="center">
+  <img src='images/corr_pca.png' width="300">
+</p>
+
+<br/>
+<p align="center">
+  <img src='images/df_PC.png' width="300">
+</p>
+
+<br/>
+<p align="center">
+  <img src='images/df_wine.png' width="300">
+</p>
 
