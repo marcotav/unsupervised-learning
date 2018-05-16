@@ -69,6 +69,12 @@ ax.set_xticklabels(ax.xaxis.get_ticklabels(), fontsize=10, rotation=90)
 ax.set_yticklabels(ax.yaxis.get_ticklabels(), fontsize=10, rotation=0)
 plt.show()
 ```
+<br/>
+<p align="center">
+  <img src='images/corr_pca.png' width="700">
+</p>
+
+
 
 ### Before applying PCA let us normalize the variables
 
@@ -82,7 +88,7 @@ wine_norm
 
 <br/>
 <p align="center">
-  <img src='images/df_scaled.png' width="800">
+  <img src='images/df_scaled.png' width="900">
 </p>
 
 ### Fitting a PCA 
@@ -98,7 +104,7 @@ wpcs['red_wine'] = wine_original['red_wine']
 ```
 <br/>
 <p align="center">
-  <img src='images/df_PC.png' width="700">
+  <img src='images/df_PC.png' width="800">
 </p>
 
 ### Plotting the variance explained ratio of the PC
@@ -136,33 +142,61 @@ Plotting this result:
 
 
 ### Component weights with corresponding variables for the PCs
+We now print out the weights (eigenvectors) with their corresponding variables. For that we use `.components_`. 
+
+> These are the principal axes in feature space, representing the directions of maximum variance in the data. 
+
+For example:
 
 ```
-for i in range(0,4):
+for i in range(0,2):
     for col, comp in zip(wc.columns, wpca.components_[i]):
         print(col,':',round(comp,3))
     print('')
 ```
+The output is:
+```
+fixed acidity : -0.26
+volatile acidity : -0.39
+citric acid : 0.15
+residual sugar : 0.32
+chlorides : -0.31
+free sulfur dioxide : 0.42
+total sulfur dioxide : 0.47
+density : -0.09
+pH : -0.21
+sulphates : -0.3
+alcohol : -0.06
+quality : 0.09
 
-### Seaborn pairplot of PCs
+fixed acidity : 0.26
+volatile acidity : 0.11
+citric acid : 0.14
+residual sugar : 0.34
+chlorides : 0.27
+free sulfur dioxide : 0.11
+total sulfur dioxide : 0.14
+density : 0.55
+pH : -0.15
+sulphates : 0.12
+alcohol : -0.49
+quality : -0.3
+```
 
+### Red vs white wines
+
+We can check if the first three components are able to differentiate red from white wines using pairplots:
 
 ```
 sns.pairplot(data=wpcs, vars=['PC1','PC2','PC3'], hue='red_wine', size=2)
 ```
 <br/>
 <p align="center">
-  <img src='images/hist_PC.png' width="500">
+  <img src='images/hist_PC.png' width="600">
 </p>
 
 
 
-
-<br/>
-<p align="center">
-  <img src='images/corr_pca.png' width="500">
-</p>
-
-
+## To be continued
 
 
