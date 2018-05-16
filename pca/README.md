@@ -2,14 +2,20 @@
 
 <p align="center">
   <a href="#intro"> Introduction </a> •
-  <a href="#lib"> Libraries </a> •
-  <a href="#pro"> Problem domain </a> •
-  <a href="#cle"> Cleaning the text </a> •
-  <a href="#results"> Results </a> 
+  <a href="#goal"> Goal </a> •
+  <a href="#imp"> Importing data </a> •
+  <a href="#corr"> Correlations </a> •
+  <a href="#fit"> Fitting a PCA </a> •
+  <a href="#expvar"> Plotting the variance explained ratio of the PC </a> •
+  <a href="#eig"> Component weights with corresponding variables for the PCs </a> 
 </p> 
 
+
+<a id = 'expvar'></a>
+### 
 ### Author: [Marco Tavora](http://www.marcotavora.me/)
 
+<a id = 'intro'></a>
 ### Introduction
 
 Principle Component Analysis or PCA is the best known dimensionality reduction algorithm. It combines existing features into fewer ones. Its goals are mainly:
@@ -18,8 +24,6 @@ Principle Component Analysis or PCA is the best known dimensionality reduction a
 - Remove multicollinearities
 
 PCA is essentially a coordinate transformation where the original axes are features and the new axes (the new coordinate system for the data) are the *principal components*.
-
-### Example
 
 Let us consider the following example. Suppose my goal is to predict $y$ from the features $x_i$ with $i=1,2,3$. Since this is 3D data it is likely that multicollinearity is present. 
 
@@ -33,10 +37,12 @@ where i=1,2,3. These principal components are uncorrelated. The new axes of prin
 
 The total variance of your data gets redistributed among the principal components and most variance is captured in the first principal components and the noise is isolated to last principal compoments. Furthermore, there is no covariance between the principal components.
 
+<a id = 'goal'></a>
 ## Goal
 
 I will apply PCA on a wine dataset.
 
+<a id = 'imp'></a>
 ### Importing data
 ```
 wine_original = pd.read_csv('wines.csv')
@@ -52,6 +58,7 @@ Excluding the `red_wine` column
 ```
 wine = wine_original.drop('red_wine', axis=1)
 ```
+<a id = 'corr'></a>
 ### Correlations
 
 ```
@@ -74,9 +81,7 @@ plt.show()
   <img src='images/corr_pca.png' width="700">
 </p>
 
-
-
-### Before applying PCA let us normalize the variables
+Before applying PCA let us normalize the variables
 
 To [optimize the performance](http://scikit-learn.org/stable/auto_examples/preprocessing/plot_scaling_importance.html#sphx-glr-auto-examples-preprocessing-plot-scaling-importance-py) of the PCA algorithm, the data should be scaled. We will do that using `StandardScaler()` from `sklearn` which standardizes the features onto unit scale.
 ```
@@ -91,6 +96,7 @@ wine_norm
   <img src='images/df_scaled.png' width="900">
 </p>
 
+<a id = 'fit'></a>
 ### Fitting a PCA 
 
 We bulild a `DataFrame` with the PCs adding back `red_wine` column that was dropped.
@@ -107,6 +113,7 @@ wpcs['red_wine'] = wine_original['red_wine']
   <img src='images/df_PC.png' width="800">
 </p>
 
+<a id = 'expvar'></a>
 ### Plotting the variance explained ratio of the PC
 
 The *explained variance* measures how much information (or variance) can be attributed to each PC. When we reduce the dimensionality, some information, or equivalently, some of the variance is lost. The attribute `explained_variance_ratio_` we find that the first principal component contains 25% of the variance.
@@ -141,6 +148,7 @@ Plotting this result:
 </p>
 
 
+<a id = 'eig'></a>
 ### Component weights with corresponding variables for the PCs
 We now print out the weights (eigenvectors) with their corresponding variables. For that we use `.components_`. 
 
@@ -182,9 +190,6 @@ sulphates : 0.12
 alcohol : -0.49
 quality : -0.3
 ```
-
-### Red vs white wines
-
 We can check if the first three components are able to differentiate red from white wines using pairplots:
 
 ```
