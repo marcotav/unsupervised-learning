@@ -51,17 +51,20 @@ The degree of a vertex is the number of edges incident to the vertex (loops coun
 
 Using the `networkx` library we can work with graphs.
 
+```
 import networkx as nx
-from IPython.core.interactiveshell import InteractiveShell
-InteractiveShell.ast_node_interactivity = "all" # see the value of multiple statements at once.
 import matplotlib.pyplot as plt
 %matplotlib inline
+```
 
 From the docs, `nx.Graph` is:
 > A base class for undirected graphs. A Graph stores nodes and edges with optional data, or attributes. Graphs hold undirected edges.  Self loops are allowed but multiple (parallel) edges are not. Nodes can be arbitrary (hashable) Python objects with optional key/value attributes. By convention `None` is not used as a node. Edges are represented as links between nodes with optional key/value attributes.
 
-The weight is a numerical value, assigned as a label to a vertex or edge of a graph. 
+The weight is a numerical value, assigned as a label to a vertex or edge of a graph. From [here](http://networksciencebook.com/2#bridges), we learn that:
 
+> In mobile call networks the weight can represent the total number of minutes two individuals talk with each other on the phone; on the power grid the weight is the amount of current flowing through a transmission line.
+
+We can build a network with `networkx` where all nodes are connected as follows. 
 We can build a graph where all nodes are connected as follows:
 ```
 nodes = ['A','B','C','D']
