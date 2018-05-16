@@ -12,17 +12,18 @@
 
 ### Introduction
 
-The goals of Principle Component Analysis or PCA are threefold:
+Principle Component Analysis or PCA is the best known dimensionality reduction algorithm. It combines existing features into fewer ones. Its goals are mainly:
 - To transform original features "high-performance" ones
 - To reduce the data dimensionality until you are left with the most relevant ones
 - Remove multicollinearities
 
 ### Example
 
-Let us consider the following example borrowed from [J. Pounders](https://jmpounders.github.io/blog/index.html). 
+Let us consider the following example. Suppose my goal is to predict $y$ from the features $x_i$ with $i=1,2,3$. Since this is 3D data it is likely that multicollinearity is present. 
 
-Suppose my goal is to predict age from the features:
-- Stress
-- Income 
-- Health
+Applying PCA we will obtain "super-predictor variables" called *components*. These are linear combinations of predictors that generate new *principal components* and the latter explain the maximum possible amount of variance in the predictors:
+
+$$PC_i = w_{1,i}x_1 + w_{2,i}x_2 + w_{3,i}x_3$$
+
+where i=1,2,3. These principal components are uncorrelated. 
 
