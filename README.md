@@ -7,6 +7,7 @@
 
 * [topic-modeling](#topic-modeling)
 * [clustering-for-customer-segmentation](#clustering-for-customer-segmentation)
+* [network-analysis](#network-analysis)
 
 
 
@@ -28,4 +29,10 @@ In this project I will apply clustering algorithms to the dataset Wholesale Cust
 <p align="center">
 <img src="https://github.com/marcotav/unsupervised-learning/blob/master/clustering-for-customer-segmentation/images/segmentation.jpg" width="400"/> 
 </p> 
+
+### network-analysis
+
+A tutorial on network analysis.
+
+
 
