@@ -72,6 +72,7 @@ plt.show()
 
 ### Before applying PCA let us normalize the variables
 
+To [optimize the performance](http://scikit-learn.org/stable/auto_examples/preprocessing/plot_scaling_importance.html#sphx-glr-auto-examples-preprocessing-plot-scaling-importance-py) of the PCA algorithm, the data should be scaled. We will do that using `StandardScaler()` from `sklearn` which standardizes the features onto unit scale.
 ```
 from sklearn.preprocessing import StandardScaler
 ss = StandardScaler()
