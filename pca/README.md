@@ -43,7 +43,7 @@ wine_original = pd.read_csv('wines.csv')
 ```
 <br/>
 <p align="center">
-  <img src='images/df_wine.png' width="500">
+  <img src='images/df_wine.png' width="800">
 </p>
 
 
@@ -72,10 +72,17 @@ plt.show()
 
 ### Before applying PCA let us normalize the variables
 
+```
 from sklearn.preprocessing import StandardScaler
 ss = StandardScaler()
 wine_norm = ss.fit_transform(wine)
 wine_norm
+```
+
+<br/>
+<p align="center">
+  <img src='images/df_scaled.png' width="800">
+</p>
 
 ### Fitting a PCA 
 
@@ -90,7 +97,7 @@ wpcs['red_wine'] = wine_original['red_wine']
 ```
 <br/>
 <p align="center">
-  <img src='images/df_PC.png' width="500">
+  <img src='images/df_PC.png' width="700">
 </p>
 
 ### Plotting the variance explained ratio of the PC
