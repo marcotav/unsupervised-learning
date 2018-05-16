@@ -19,11 +19,13 @@ Principle Component Analysis or PCA is the best known dimensionality reduction a
 
 ### Example
 
-Let us consider the following example. Suppose my goal is to predict $y$ from the features $x_i$ with $i=1,2,3$. Since this is 3D data it is likely that multicollinearity is present. 
+Let us consider the following example. Suppose my goal is to predict y from the features `x_i` with i=1,2,3. Since this is 3D data it is likely that multicollinearity is present. 
 
 Applying PCA we will obtain "super-predictor variables" called *components*. These are linear combinations of predictors that generate new *principal components* and the latter explain the maximum possible amount of variance in the predictors:
 
-$$PC_i = w_{1,i}x_1 + w_{2,i}x_2 + w_{3,i}x_3$$
-
+<br/>
+<p align="center">
+  <img src='images/pca_comp.png' width="300">
+</p>
 where i=1,2,3. These principal components are uncorrelated. 
 
