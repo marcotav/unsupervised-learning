@@ -74,3 +74,7 @@ for comb in combs:
     w += 1
 nx.draw_networkx(g)
 ```
+<br/>
+<p align="center">
+  <img src='images/graph_1.png' width="300">
+</p>
