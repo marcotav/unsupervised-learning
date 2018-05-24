@@ -29,8 +29,26 @@ This notebook was inspired by this [exceptional post](http://blog.yhat.com/posts
 
 The dataset is from this [book](https://www.amazon.com/Data-Smart-Science-Transform-Information-ebook/dp/B00F0WRXI0/ref=mt_kindle?_encoding=UTF8&me=). It contains two tables:
 - The first contains information about offers including minimum purchase requirement, discounts offered and information about the wines. 
+
+<br>
+<br>
+<p align="center">
+  <img src="images/df1.png" 
+       width="650">
+</p>
+<br>
+
+
 - The other shows which offers were accepted by which customers. 
 
+
+<br>
+<br>
+<p align="center">
+  <img src="images/df2.png" 
+       width="250">
+</p>
+<br>
 
 
 
