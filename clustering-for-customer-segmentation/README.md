@@ -5,12 +5,12 @@
 
 <p align="center">
   <a href="#intro"> Introduction </a> •
+  <a href="#data"> Dataset </a> •
 </p> 
 
 <a id = 'intro'></a>
 ### Introduction
 [[go back to the top]](#Table-of-contents)
-
 
 This notebook describes how to perform market segmentation using machine learning algorithms. As usual, Wikipedia provides a very thorough definition:
 
@@ -21,6 +21,15 @@ I will show how to apply two clustering algorithms to this task:
 - Density-Based Spatial Clustering of Applications with Noise (DBSCAN)
 
 This notebook was inspired by this [exceptional post](http://blog.yhat.com/posts/customer-segmentation-using-python.html).
+
+<a id = 'data'></a>
+## Dataset
+
+[[go back to the top]](#Table-of-contents)
+
+The dataset is from this [book](https://www.amazon.com/Data-Smart-Science-Transform-Information-ebook/dp/B00F0WRXI0/ref=mt_kindle?_encoding=UTF8&me=). It contains two tables:
+- The first contains information about offers including minimum purchase requirement, discounts offered and information about the wines. 
+- The other shows which offers were accepted by which customers. 
 
 
 
