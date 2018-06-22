@@ -103,4 +103,5 @@ nx.draw_networkx(g)
   <img src='images/graph_1.png' width="300">
 </p>
 
-
+There are many more important properties that are not mentioned here. For a detailed treatment see the [great book 
+by Barabasi](https://www.amazon.com/Linked-Science-Networks-Albert-laszlo-Barabasi/dp/0738206679). We will now apply the concept of network analysis to social networks.
